@@ -10,12 +10,21 @@ public class Account {
         this.accountNumber = accountNumber;
         this.balance = balance;
     }
+    
+   // Getters and Setters
+    public String getAccountNumber() {
+    	return accountNumber; 
+    }
+    public void setAccountNumber(String accountNumber) {
+    	this.accountNumber = accountNumber; 
+    }
 
-    public String getAccountNumber() { return accountNumber; }
-    public void setAccountNumber(String accountNumber) { this.accountNumber = accountNumber; }
-
-    public double getBalance() { return balance; }
-    public void setBalance(double balance) { this.balance = balance; }
+    public double getBalance() {
+        return balance; 
+     }
+    public void setBalance(double balance) { 
+    	this.balance = balance; 
+    }
 }
 
 

@@ -28,16 +28,16 @@ public class TransferController {
                 transaction.getDestinationAccountNumber(),
                 transaction.getAmount()
         );
-        return ResponseEntity.ok(result);
+        return ResponseEntity.ok(result); // Return message as HTTP 200
     }
 
     @GetMapping("/account/{accountNumber}")
     public ResponseEntity<Account> getAccount(@PathVariable String accountNumber) {
         Account account = transferService.getAccount(accountNumber);
         if (account != null) {
-            return ResponseEntity.ok(account);
+            return ResponseEntity.ok(account); // Return account if exists
         } else {
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.notFound().build(); // Return 404
         }
     }
 }

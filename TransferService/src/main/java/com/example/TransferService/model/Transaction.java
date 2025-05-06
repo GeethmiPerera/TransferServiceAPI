@@ -13,14 +13,26 @@ public class Transaction {
         this.amount = amount;
     }
 
-    public String getSourceAccountNumber() { return sourceAccountNumber; }
-    public void setSourceAccountNumber(String sourceAccountNumber) { this.sourceAccountNumber = sourceAccountNumber; }
+    public String getSourceAccountNumber() { 
+    	return sourceAccountNumber; 
+     }
+    public void setSourceAccountNumber(String sourceAccountNumber) { 
+    	this.sourceAccountNumber = sourceAccountNumber; 
+    }
 
-    public String getDestinationAccountNumber() { return destinationAccountNumber; }
-    public void setDestinationAccountNumber(String destinationAccountNumber) { this.destinationAccountNumber = destinationAccountNumber; }
+    public String getDestinationAccountNumber() { 
+    	return destinationAccountNumber; 
+    }
+    public void setDestinationAccountNumber(String destinationAccountNumber) { 
+    	this.destinationAccountNumber = destinationAccountNumber; 
+    }
 
-    public double getAmount() { return amount; }
-    public void setAmount(double amount) { this.amount = amount; }
+    public double getAmount() { 
+    	return amount; 
+    }
+    public void setAmount(double amount) {
+    	this.amount = amount; 
+    }
 }
 
 

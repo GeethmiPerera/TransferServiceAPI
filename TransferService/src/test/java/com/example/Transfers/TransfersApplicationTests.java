@@ -23,7 +23,7 @@ public class TransfersApplicationTests {
 
 	@Test
     public void testSuccessfulTransfer() throws Exception {
-        Transaction tx = new Transaction("123", "456", 100.0);
+        Transaction tx = new Transaction("123", "4565", 100.0);
         mockMvc.perform(post("/api/transfer")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().writeValueAsString(tx)))
@@ -33,11 +33,41 @@ public class TransfersApplicationTests {
 
     @Test
     public void testInsufficientBalance() throws Exception {
-        Transaction tx = new Transaction("456", "789", 1000.0);
+        Transaction tx = new Transaction("4565", "1891", 100000.0); // higher than balance
         mockMvc.perform(post("/api/transfer")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().writeValueAsString(tx)))
                 .andExpect(status().isOk())
                 .andExpect(content().string("Insufficient balance."));
+    }
+    
+    @Test
+    public void testSameAccountTransfer() throws Exception {
+        Transaction tx = new Transaction("123", "123", 100.0); //same account
+        mockMvc.perform(post("/api/transfer")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(new ObjectMapper().writeValueAsString(tx)))
+                .andExpect(status().isBadRequest())
+                .andExpect(content().string("Source and destination accounts must be different."));
+    }
+
+    @Test
+    public void testNegativeAmountTransfer() throws Exception {
+        Transaction tx = new Transaction("123", "4565", -50.0); // negative amount
+        mockMvc.perform(post("/api/transfer")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(new ObjectMapper().writeValueAsString(tx)))
+                .andExpect(status().isBadRequest())
+                .andExpect(content().string("Amount must be positive."));
+    }
+
+    @Test
+    public void testAccountNotFound() throws Exception {
+        Transaction tx = new Transaction("1111", "4565", 100.0); // wrong account number
+        mockMvc.perform(post("/api/transfer")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(new ObjectMapper().writeValueAsString(tx)))
+                .andExpect(status().isNotFound())
+                .andExpect(content().string("One or both accounts not found."));
     }
 }
