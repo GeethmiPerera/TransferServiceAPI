@@ -79,7 +79,7 @@ Fetch account details by account number.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/GeethmiPerera/transfer-service-api.git
+   git clone https://github.com/GeethmiPerera/TransferServiceAPI.git
    cd transfer-service-api
    ```
 
