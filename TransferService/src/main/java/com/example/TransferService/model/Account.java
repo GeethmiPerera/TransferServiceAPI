@@ -1,7 +1,7 @@
 package com.example.TransferService.model;
 
 public class Account {
-	private String accountNumber;
+    private String accountNumber;
     private double balance;
 
     public Account() {}
