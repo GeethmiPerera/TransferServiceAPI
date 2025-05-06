@@ -1,10 +1,10 @@
-# 💸 TransferServiceAPI
+# TransferServiceAPI
 
 A simple RESTful API built with Spring Boot for transferring funds between accounts. This project demonstrates clean code architecture, RESTful design, error handling, and basic testing.
 
 ---
 
-## 🚀 Features
+##  Features
 
 - Fund transfers between in-memory accounts
 - RESTful endpoints with input validation
@@ -12,7 +12,7 @@ A simple RESTful API built with Spring Boot for transferring funds between accou
 
 ---
 
-## 📦 Tech Stack
+##  Tech Stack
 
 - Java 17+
 - Spring Boot
@@ -21,7 +21,7 @@ A simple RESTful API built with Spring Boot for transferring funds between accou
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 com.example.TransferService
@@ -34,7 +34,7 @@ com.example.TransferService
 
 ---
 
-## 🔄 API Endpoints
+##  API Endpoints
 
 ### POST `/api/transfer`
 
@@ -75,7 +75,7 @@ Fetch account details by account number.
 
 ---
 
-## 🛠️ How to Run Locally
+##  How to Run Locally
 
 1. Clone the repository:
    ```bash
